@@ -1,37 +1,34 @@
 name: tigris
-image: mcp/tigris
+image: tigrisdata/tigris-mcp-server
 type: server
 meta:
   category: devops
   tags:
-    - s3-storage
+    - tigrisdata
+    - s3
     - storage
-    - tigris
-    - tigris-data
-    - typescript
 about:
   title: Tigris
-  description: TODO (only to provide a better description than the upstream project)
-  icon: https://avatars.githubusercontent.com/u/95787860?v=4
+  icon: https://avatars.githubusercontent.com/u/95787860?s=48&v=4
 source:
   project: https://github.com/tigrisdata/tigris-mcp-server
 config:
-  description: Configure the connection to TODO
+  description: Configure the connection to AWS
   secrets:
     - name: tigris.aws_secret_access_key
       env: AWS_SECRET_ACCESS_KEY
-      example: <AWS_SECRET_ACCESS_KEY>
+      example: YOUR_SECRET_ACCESS_KEY_HERE
   env:
     - name: AWS_ACCESS_KEY_ID
-      example: tid_xxxxxxxxxxxxxxxxxxx
-      value: "{{aws_access_key_id}}"
+      example: YOUR_ACCESS_KEY_HERE
+      value: "{{tigris.aws_access_key_id}}"
     - name: AWS_ENDPOINT_URL_S3
-      example: https://t3.storage.dev
-      value: "{{aws_endpoint_url_s3}}"
+      example: https://fly.storage.tigris.dev
+      value: "{{tigris.aws_endpoint_url_s3}}"
   parameters:
     type: object
     properties:
       aws_access_key_id:
         type: string
-      aws_endpoint_url_s3:
-        type: string
+    required:
+      - aws_access_key_id
