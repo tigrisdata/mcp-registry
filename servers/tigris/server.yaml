@@ -21,10 +21,10 @@ config:
   env:
     - name: AWS_ACCESS_KEY_ID
       example: YOUR_ACCESS_KEY_HERE
-      value: "{{tigris.aws_access_key_id}}"
+      value: '{{tigris.aws_access_key_id}}'
     - name: AWS_ENDPOINT_URL_S3
       example: https://fly.storage.tigris.dev
-      value: "{{tigris.aws_endpoint_url_s3}}"
+      value: '{{tigris.aws_endpoint_url_s3}}'
   parameters:
     type: object
     properties:
