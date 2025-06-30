@@ -24,10 +24,10 @@ config:
   env:
     - name: AWS_ACCESS_KEY_ID
       example: tid_xxxxxxxxxxxxxxxxxxx
-      value: '{{aws_access_key_id}}'
+      value: "{{aws_access_key_id}}"
     - name: AWS_ENDPOINT_URL_S3
       example: https://t3.storage.dev
-      value: '{{aws_endpoint_url_s3}}'
+      value: "{{aws_endpoint_url_s3}}"
   parameters:
     type: object
     properties:
